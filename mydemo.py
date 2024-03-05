@@ -13,12 +13,17 @@ from config import get_config
 
 BASE_URL = "http://node2.chrischoy.org/data/"
 DOWNLOAD_LIST = [
-    #(BASE_URL + "datasets/registration/", "redkitchen_000.ply"),
-    #(BASE_URL + "datasets/registration/", "redkitchen_010.ply"),
+    (BASE_URL + "datasets/registration/", "redkitchen_000.ply"),
+    (BASE_URL + "datasets/registration/", "redkitchen_010.ply"),
     (BASE_URL + "projects/DGR/", "ResUNetBN2C-feat32-3dmatch-v0.3.pth")
 ]
 
 # Check if the weights and file exist and download
+if not os.path.isfile('redkitchen_000.ply'):
+  print('Downloading weights and pointcloud files...')
+  for f in DOWNLOAD_LIST:
+    print(f"Downloading {f}")
+    urlretrieve(f[0] + f[1], f[1])
 
 if __name__ == '__main__':
   config = get_config()
