@@ -15,7 +15,7 @@ BASE_URL = "http://node2.chrischoy.org/data/"
 DOWNLOAD_LIST = [
     (BASE_URL + "datasets/registration/", "redkitchen_000.ply"),
     (BASE_URL + "datasets/registration/", "redkitchen_010.ply"),
-    (BASE_URL + "projects/DGR/", "ResUNetBN2C-feat32-3dmatch-v0.3.pth")
+    (BASE_URL + "projects/DGR/", "ResUNetBN2C-feat32-kitti-v0.3.pth")
 ]
 
 # Check if the weights and file exist and download
